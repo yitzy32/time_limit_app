@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create" # stores to sign in
 
     post "/customers" => "customers#create"
+    patch "/customers" => "customers#update"
   end
 end

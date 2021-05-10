@@ -12,7 +12,4 @@ class Api::StoresController < ApplicationController
       render json: { errors: store.errors.full_messages }, status: :bad_request
     end
   end
-
-  # render "show.json.jb"
-
 end

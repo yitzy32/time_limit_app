@@ -12,4 +12,11 @@ class Api::CustomersController < ApplicationController
     @customer.save
     render "show.json.jb"
   end
+
+  def update
+    @customer = Customer.find_by(id: params[:id])
+    @customer.is_present = false
+    @customer.save
+    render "show.json.jb"
+  end
 end
