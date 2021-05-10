@@ -1,12 +1,18 @@
 class Api::StoresController < ApplicationController
   def create
-    @store = Store.new(
+    store = Store.new(
       name: params[:name],
-      password: params[:password],
       email: params[:email],
-      address: params[:address],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
     )
-    @store.save
-    render "show.json.jb"
+    if store.save
+      render json: { message: "Store created successfully" }, status: :created
+    else
+      render json: { errors: store.errors.full_messages }, status: :bad_request
+    end
   end
+
+  # render "show.json.jb"
+
 end

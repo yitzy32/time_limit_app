@@ -1,0 +1,10 @@
+{
+  id: @customer.id,
+  name: @customer.name,
+  email: @customer.email,
+  phone_number: @customer.phone_number,
+  start_time: @customer.start_time.strftime("%b %e, %l:%M %p"),
+  end_time: @customer.end_time.strftime("%b %e, %l:%M %p"),
+  is_present: @customer.is_present,
+  store_id: @customer.store_id,
+}
